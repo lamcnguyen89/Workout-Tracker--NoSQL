@@ -28,7 +28,7 @@ router.get("/api/allworkouts", (req, res) => {
 });
 
 // POST ( "/api/workouts" ) - Create a new Workout
-router.post("/api/createworkout", ({body}, res) => {
+router.post("/api/workouts", ({body}, res) => {
     Workouts.create(body)
         .then(dbWorkouts => {
             res.json(dbWorkouts);
@@ -39,7 +39,7 @@ router.post("/api/createworkout", ({body}, res) => {
  })
 
 // PUT ( "/api/workouts/:id" ) - Update a Workout
-router.put("/api/updateWorkout/:id", ({body,params},res) =>{
+router.put("/api/workouts/:id", ({body,params},res) =>{
     Workouts.findByIdAndUpdate(
         params.id,
         {$push:{exercises:body} },
@@ -54,7 +54,7 @@ router.put("/api/updateWorkout/:id", ({body,params},res) =>{
 })
 
 // Delete ( "/api/deleteworkouts/:id" ) - Delete a Workout
-router.delete("/api/deleteworkout/:id", ({body}, res) => {
+router.delete("/api/deleteworkouts/:id", ({body}, res) => {
     Workouts.findByIdAndDelete(
         params.id,
         {$push:{exercises:body} },
