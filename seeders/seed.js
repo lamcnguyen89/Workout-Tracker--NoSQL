@@ -8,14 +8,40 @@ mongoose.connect("mongodb://localhost/workout", {
 
 let workoutSeed = [
   {
+    day: new Date().setDate(new Date().getDate()-12),
+    exercises: [
+      {
+        type: "resistance",
+        name: "One-Arm Pushups",
+        duration: 5,
+        weight: 100,
+        reps: 15,
+        sets: 2
+      }
+    ]
+  },
+  {
+    day: new Date().setDate(new Date().getDate()-11),
+    exercises: [
+      {
+        type: "resistance",
+        name: "Pullups",
+        duration: 5,
+        weight: 150,
+        reps: 17,
+        sets: 2
+      }
+    ]
+  },
+  {
     day: new Date().setDate(new Date().getDate()-10),
     exercises: [
       {
         type: "resistance",
-        name: "Bicep Curl",
+        name: "Bent Press",
         duration: 20,
         weight: 100,
-        reps: 10,
+        reps: 2,
         sets: 4
       }
     ]
@@ -25,10 +51,10 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Lateral Pull",
+        name: "Turkish Get Up",
         duration: 20,
-        weight: 300,
-        reps: 10,
+        weight: 100,
+        reps: 2,
         sets: 4
       }
     ]
@@ -38,11 +64,11 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Push Press",
-        duration: 25,
-        weight: 185,
-        reps: 8,
-        sets: 4
+        name: "Dumbbell Snatch",
+        duration: 10,
+        weight: 90,
+        reps: 5,
+        sets: 3
       }
     ]
   },
@@ -62,11 +88,11 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Bench Press",
+        name: "Olympic Front Squat",
         duration: 20,
-        weight: 285,
-        reps: 10,
-        sets: 4
+        weight: 210,
+        reps: 5,
+        sets: 3
       }
     ]
   },
@@ -75,11 +101,11 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Bench Press",
+        name: "Olympic Back Squat",
         duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4
+        weight: 210,
+        reps: 5,
+        sets: 3
       }
     ]
   },
@@ -88,11 +114,11 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Quad Press",
-        duration: 30,
-        weight: 300,
-        reps: 10,
-        sets: 4
+        name: "Snatch Grip Deadlift",
+        duration: 20,
+        weight: 210,
+        reps: 5,
+        sets: 3
       }
     ]
   },
@@ -101,11 +127,11 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Bench Press",
+        name: "Clean and Jerk",
         duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4
+        weight: 210,
+        reps: 1,
+        sets: 5
       }
     ]
   },
@@ -114,11 +140,11 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Military Press",
+        name: "Power Snatch",
         duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4
+        weight: 135,
+        reps: 3,
+        sets: 5
       }
     ]
   },
@@ -126,10 +152,12 @@ let workoutSeed = [
     day: new Date().setDate(new Date().getDate()-1),
     exercises: [
       {
-        type: "cardio",
-        name: "Running",
-        duration: 30,
-        distance: 2
+        type: "resistance",
+        name: "Standing Press",
+        duration: 5,
+        weight: 135,
+        reps: 5,
+        sets: 1
       }
     ]
   }
