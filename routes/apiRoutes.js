@@ -12,7 +12,7 @@
             // - For allowing the user to see workout stats (charts).
 
 const router = require("express").Router();
-const Workouts = require("../model/Workout.js");
+const Workouts = require("../models/Workout.js");
 
 // GET ( "/api/workouts" ) - Get all workouts. 
 // In the front end JavaScript we will do a loop that moves through the entire length of the array.
