@@ -10,3 +10,63 @@
             // - Allows the user to create new workout routines
         // - PUT ( "/api/workouts/:id" ) - Update a Workout
             // - For allowing the user to see workout stats (charts).
+
+const router = require("express").Router();
+const Workouts = require("../model/Workout.js");
+
+// GET ( "/api/workouts" ) - Get all workouts. 
+// In the front end JavaScript we will do a loop that moves through the entire length of the array.
+// Also we will do a different loop that moves through the first seven  objects of the array.
+router.get("/api/allworkouts", (req, res) => {
+    Workouts.find({})
+        .then(dbWorkouts => {
+            res.json(dbWorkouts);
+        })
+        .catch(err => {
+            res.status(400).json(err);
+          });
+});
+
+// POST ( "/api/workouts" ) - Create a new Workout
+router.post("/api/createworkout", ({body}, res) => {
+    Workouts.create(body)
+        .then(dbWorkouts => {
+            res.json(dbWorkouts);
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+ })
+
+// PUT ( "/api/workouts/:id" ) - Update a Workout
+router.put("/api/updateWorkout/:id", ({body,params},res) =>{
+    Workouts.findByIdAndUpdate(
+        params.id,
+        {$push:{exercises:body} },
+        {new: true, runValidators: true }
+    )
+    .then(dbWorkouts => {
+        res.json(dbWorkouts);
+    })
+    .catch(err => {
+        res.status(400).json(err);
+    });
+})
+
+// Delete ( "/api/deleteworkouts/:id" ) - Delete a Workout
+router.delete("/api/deleteworkout/:id", ({body}, res) => {
+    Workouts.findByIdAndDelete(
+        params.id,
+        {$push:{exercises:body} },
+        {new: true, runValidators: true }
+    )
+    .then(dbWorkouts => {
+        res.json(dbWorkouts);
+    })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+ })
+
+
+module.exports = router;
