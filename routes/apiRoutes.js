@@ -17,7 +17,17 @@ const Workouts = require("../model/Workout.js");
 // GET ( "/api/workouts" ) - Get all workouts. 
 // In the front end JavaScript we will do a loop that moves through the entire length of the array.
 // Also we will do a different loop that moves through the first seven  objects of the array.
-router.get("/api/allworkouts", (req, res) => {
+router.get("/api/workouts", (req, res) => {
+    Workouts.find({})
+        .then(dbWorkouts => {
+            res.json(dbWorkouts);
+        })
+        .catch(err => {
+            res.status(400).json(err);
+          });
+});
+
+router.get("/api/workouts/range", (req, res) => {
     Workouts.find({})
         .then(dbWorkouts => {
             res.json(dbWorkouts);
