@@ -1,6 +1,7 @@
 // Import npm packages and dependencies
 const express = require("express");
 const mongoose = require("mongoose");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://malneyungfl:nguyen05041989@ds263307.mlab.com:63307/heroku_h2wdsrbn"
 
 
 // Create PORT and assign to a variable.
