@@ -28,4 +28,4 @@ The Unlicense
 
 ## Deployed Application
 
-View deployed application on Heroku [here](https://git.heroku.com/dry-retreat-44297.git)
+View deployed application on Heroku [here](https://dry-retreat-44297.herokuapp.com/)
